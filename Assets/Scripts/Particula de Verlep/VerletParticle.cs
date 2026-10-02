@@ -8,7 +8,6 @@ public class VerletParticle
     public Vector3 posicionActual;
     public Vector3 posicionPasada;
     public bool puntoFijo;
-    public bool esquina;
     
     public VerletParticle(Vector3 pos, bool pFijo)
     {
