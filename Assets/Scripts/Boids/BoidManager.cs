@@ -1,27 +1,32 @@
-using UnityEngine;
+using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class BoidManager : MonoBehaviour
 {
-    public static BoidManager instance;
-    [SerializeField] private GameObject boidPrefab;
+    public static BoidManager Instance { get; private set; }
+    [SerializeField]
+    GameObject boidPrefab;
     public float radioZona;
 
-    [Header("Spawn inicio")]
+    [Header("Spawn info")]
     public int cantidad = 10;
-    public int radio = 10;
+    public int radioSpawn = 10;
 
-    public List<Boid> boidsList = new List<Boid>();
+    public List<Boid> boids = new List<Boid>();
+
+
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            instance = this;
+            Instance = this;
         }
     }
 
@@ -29,8 +34,16 @@ public class BoidManager : MonoBehaviour
     {
         for (int i = 0; i < cantidad; i++)
         {
-            GameObject go = Instantiate(boidPrefab, this.transform.position + Random.insideUnitSphere * radio, Random.rotation);
-            boidsList.Add(go.GetComponent<Boid>());
+
+            GameObject go = Instantiate(boidPrefab, this.transform.position + Random.insideUnitSphere * radioSpawn, Random.rotation);
+            boids.Add(go.GetComponent<Boid>());
+
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, radioZona);
+    }
+
 }

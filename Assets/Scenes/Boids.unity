@@ -383,10 +383,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoidManager
   boidPrefab: {fileID: 6956667560677804713, guid: ab609622c6526b143b5d22b39c13e960, type: 3}
-  radioZona: 10
-  cantidad: 250
-  radio: 30
-  boidsList: []
+  radioZona: 50
+  cantidad: 100
+  radioSpawn: 50
+  boids: []
 --- !u!1 &1944922597
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 1944922600}
   - component: {fileID: 1944922599}
   - component: {fileID: 1944922598}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 2032104648}
   - component: {fileID: 2032104647}
   - component: {fileID: 2032104646}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

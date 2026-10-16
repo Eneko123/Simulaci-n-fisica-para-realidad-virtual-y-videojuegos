@@ -128,9 +128,16 @@ MonoBehaviour:
   velocidad: 2
   velocidadGiro: 2
   radio: 5
-  radioSeparacion: 1
+  radioSeparacion: 2
   anguloVista: 80
-  pesoCoesion: 1
+  capaObjetos:
+    serializedVersion: 2
+    m_Bits: 8
+  distanciaObstaculo: 2
+  pesoCohesion: 1
   pesoAlineacion: 1
   pesoSeparacion: 1.5
   pesoLimite: 4
+  pesoObstaculo: 4
+  pesoObjetivo: 1
+  objetivo: {fileID: 0}
